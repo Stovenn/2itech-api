@@ -1,5 +1,6 @@
 import * as express from 'express'
-import { IndexController } from './controllers/indexController'
+import { IndexController } from './controllers/IndexController'
+import { UserController } from './controllers/userController'
 
 
 export interface Route {
@@ -17,4 +18,23 @@ export const routes: Route[] = [
         controller: IndexController,
         action: 'index',
     },
+
+    {
+        method: 'get',
+        path: '/users',
+        controller: UserController,
+        action: 'getUsers'
+    },
+    {
+        method: 'get',
+        path: '/users/:email',
+        controller: UserController,
+        action: 'getUserByEmail'
+    },
+    {
+        method: 'post',
+        path: '/register',
+        controller: UserController,
+        action: 'register'
+    }
 ]

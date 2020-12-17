@@ -27,3 +27,27 @@ export class InternalServerError extends DomainError{
         this.reason = reason
     }
 }
+
+export class BadRequest  extends DomainError {
+    constructor(reason: string = 'Conflict duplicate'){
+        super('Conflict duplicate')
+        this.code = 400
+        this.reason = reason
+    }
+}
+
+export class ConflictError  extends DomainError {
+    constructor(reason?: string){
+        super('Bad Request')
+        this.code = 409
+        this.reason = reason
+    }
+}
+
+export class UnprocessableEntityError  extends DomainError {
+    constructor(reason?: string){
+        super('Bad error')
+        this.code = 422
+        this.reason = reason
+    }
+}
