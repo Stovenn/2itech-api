@@ -1,6 +1,7 @@
 import * as express from 'express'
 import { IndexController } from './controllers/indexController'
 
+
 export interface Route {
     method: string                      //get, post, put, delete
     path: string                        // chemin
@@ -14,6 +15,6 @@ export const routes: Route[] = [
         method: 'get',
         path: '/',
         controller: IndexController,
-        action: 'index'
+        action: 'index',
     },
 ]
